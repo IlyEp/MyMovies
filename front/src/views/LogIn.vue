@@ -1,7 +1,7 @@
 <template>
   <div class="main">
 
-      <form @submit.prevent="submitform" class="form">
+       <form class="form">
         <p class="title"> LOGIN</p>
         <label class="label" for="email">Email</label>
         <input type="email" name="email" class="input" placeholder="Email">
@@ -13,10 +13,36 @@
         <button class="submitbutton">Submit</button>
       </form>
     </div>
-  </template>
+
+  <div class="signup">
+    <form @submit.prevent="registerfunction">
+      <label aria-hidden="true" for="chk">Sign up</label>
+      <input v-model="mailregister" name="txt" placeholder="Mail" required type="text">
+      <input v-model="passwordregister" name="pswd" placeholder="Password" required type="password">
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+
+</template>
 
 <script>
 
+export let data
+export default {
+  name: "LoginPage",
+  data() {
+    return {
+      maillogin: '',
+      passwordlogin: '',
+      errorlogin: '',
+      tokenlogin: '',
+      mailregister: '',
+      passwordregister: '',
+      errorregister: '',
+
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -28,7 +54,6 @@
   width: 100%;
   height: 100vh;
   background-color: #dfb235;
-
 
 }
 .form{
@@ -56,9 +81,13 @@
   padding: 5px;
   margin-top: 25px;
   margin-bottom: 25px;
-
-
 }
+.signup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .submitbutton{
   background-color: #dfb235;
   width: 170px;
