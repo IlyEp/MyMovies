@@ -1,6 +1,7 @@
+
 <template>
   <div>
-    navbar
+    e
   </div>
 </template>
 
@@ -11,3 +12,4 @@
 <style scoped>
 
 </style>
+
